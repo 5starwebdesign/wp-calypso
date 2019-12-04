@@ -242,7 +242,6 @@ class Home extends Component {
 		// Show the standard heading otherwise
 		return (
 			<FormattedHeader
-				className="customer-home__page-heading"
 				headerText={ translate( 'My Home' ) }
 				subHeaderText={ translate(
 					'Your home base for all the posting, editing, and growing of your site'
@@ -280,7 +279,7 @@ class Home extends Component {
 				<DocumentHead title={ translate( 'Customer Home' ) } />
 				{ siteId && <QuerySiteChecklist siteId={ siteId } /> }
 				<SidebarNavigation />
-				{ this.renderCustomerHomeHeader() }
+				<div className="customer-home__page-heading">{ this.renderCustomerHomeHeader() }</div>
 				{ //Only show upgrade nudges to sites > 2 days old
 				isEstablishedSite && (
 					<div class="customer-home__upsells">
